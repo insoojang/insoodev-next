@@ -4,22 +4,20 @@ import Document, {
     Main,
     NextScript,
     DocumentContext,
-} from "next/document";
-import { ServerStyleSheet } from 'styled-components';
+} from 'next/document'
+import { ServerStyleSheet } from 'styled-components'
 
 class CustomDocument extends Document {
     static async getInitialProps(ctx: DocumentContext) {
-        const sheet = new ServerStyleSheet();
-        const originalRenderPage = ctx.renderPage;
-
+        const sheet = new ServerStyleSheet()
+        const originalRenderPage = ctx.renderPage
         try {
             ctx.renderPage = () =>
                 originalRenderPage({
-                    enhanceApp: App => props => sheet.collectStyles(<App {...props} />)
-                });
-
-            const initialProps = await Document.getInitialProps(ctx);
-
+                    enhanceApp: (App) => (props) =>
+                        sheet.collectStyles(<App {...props} />),
+                })
+            const initialProps = await Document.getInitialProps(ctx)
             return {
                 ...initialProps,
                 styles: (
@@ -27,12 +25,12 @@ class CustomDocument extends Document {
                         {initialProps.styles}
                         {sheet.getStyleElement()}
                     </>
-                )
-            };
+                ),
+            }
         } catch (error) {
-            throw error;
+            throw error
         } finally {
-            sheet.seal();
+            sheet.seal()
         }
     }
     render() {
@@ -40,7 +38,11 @@ class CustomDocument extends Document {
             <Html>
                 <Head>
                     <meta charSet="utf-8" />
-                    <link rel="shortcut icon" href="/favicon.svg" type="image/svg" />
+                    <link
+                        rel="shortcut icon"
+                        href="/favicon.svg"
+                        type="image/svg"
+                    />
                     <meta property="og:title" content="" />
                     <meta property="og:image" content="" />
                     <meta property="og:description" content="" />
@@ -59,12 +61,12 @@ class CustomDocument extends Document {
                     {/*/>*/}
                 </Head>
                 <body>
-                <Main />
-                <NextScript />
+                    <Main />
+                    <NextScript />
                 </body>
             </Html>
-        );
+        )
     }
 }
 
-export default CustomDocument;
+export default CustomDocument
