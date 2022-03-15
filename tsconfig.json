@@ -19,11 +19,8 @@
     "isolatedModules": true,
     "jsx": "preserve"
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
-  ],
+  "files": ["twin.d.ts"], // 추가
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.js"], //js추가
   "exclude": [
     "node_modules"
   ]
