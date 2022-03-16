@@ -140,3 +140,4 @@ export const TypoStylizedTiny = styled.p`
     font-style: normal;
     text-decoration: none;
 `
+//GPL 3.0 :  www.hoondev.com 디자인을 반영하였습니다.

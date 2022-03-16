@@ -87,3 +87,4 @@ module.exports = {
     },
     // plugins: [require('@tailwindcss/typography')],
 }
+//GPL 3.0 :  www.hoondev.com 디자인을 반영하였습니다.
