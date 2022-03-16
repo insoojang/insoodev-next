@@ -1,9 +1,9 @@
 import tw, { styled } from 'twin.macro'
 import { Header, Footer } from './index'
-import { useScrollReactiveFloat } from '../../hooks/useScrollReactiveFloat'
+import { useScroll } from '../../hooks/useScroll'
 
 const MainLayout = ({ children }) => {
-    const float = useScrollReactiveFloat()
+    const float = useScroll()
     return (
         <>
             <Header float={float} />
