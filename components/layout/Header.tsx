@@ -1,4 +1,5 @@
 import tw, { styled } from 'twin.macro'
+import Image from 'next/image'
 
 interface IHeaderProps {
     float?: boolean
@@ -7,9 +8,14 @@ const Header = ({ float }: IHeaderProps) => {
     return (
         <Nav role="navigation">
             <Div_HeaderContainer value={float}>
-                {/*<Div_Image>*/}
-                {/*    <Image src="/images/logo.svg" priority layout="fill" alt="Logo" />*/}
-                {/*</Div_Image>*/}
+                <Div_Image>
+                    <Image
+                        src="/images/logo.svg"
+                        priority
+                        layout="fill"
+                        alt="Logo"
+                    />
+                </Div_Image>
                 <A_HeaderMenu
                     href="https://github.com/insoojang"
                     target="_blank"
